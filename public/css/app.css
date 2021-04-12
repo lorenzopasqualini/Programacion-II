@@ -153,10 +153,11 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url();
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+background-image: url(/images/vinyls.png); 
+background-repeat: no-repeat;   
+background-size: contain;  
+ background-position: center center;  
+  height: 800px;  }
 
 
 /*====== Products ======*/
@@ -458,9 +459,7 @@ textarea.form-input {
     text-align: right;
   }
 
-  .banner {
-    height: 320px;
-  }
+
 
   .btn-toggle-navbar {
     display: none;
