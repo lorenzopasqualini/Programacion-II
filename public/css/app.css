@@ -1,18 +1,16 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
-
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
-  --green: #39b54a;
+  --sapphire: #05668D;
+  --seaweed: #028090;
+  --persian: #00A896;
+  --meadow: #02C39A;
+  --spring: #F0F3BD;
+  --fade: #ffffff50;
   --base-font-family: 'Roboto', sans-serif
 }
-
 
 /*====== Basics ======*/
 * {
@@ -29,7 +27,9 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-image: url(/images/tlFondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 ul,
@@ -61,14 +61,13 @@ textarea {
 
 hr {
   border: none;
-  border-bottom: solid 1px var(--light-gray);
+  border-bottom: solid 1px var(--meadow);
 }
 
 
 /*====== Main Header ======*/
 .main-header {
-  padding: 15px 0;
-  background-color: var(--yellow);
+  padding: 10px 0;
 }
 
 .main-header_home-link,
@@ -89,7 +88,7 @@ hr {
 }
 
 .search-form_input {
-  border: solid 1px var(--light-gray);
+  border: solid 1px var(--meadow);
   display: block;
   width: 100%;
   padding: 7px 35px 7px 7px;
@@ -102,9 +101,9 @@ hr {
   position: absolute;
   right: 2px;
   height: 60%;
-  background-color: #ffffff;
+  background-color: var(--fade);
   border: none;
-  border-left: solid 1px var(--light-gray);
+  border-left: solid 1px var(--meadow);
   color: var(--gray);
   cursor: pointer;
 }
@@ -112,8 +111,8 @@ hr {
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
-  background-color: var(--dark-blue);
-  color: #ffffff;
+  background-color: var(--sapphire);
+  color: var(--fade);
   font-size: 1.5em;
   border: none;
   border-radius: 4px;
@@ -140,25 +139,23 @@ hr {
 }
 
 .logout:hover{
-  color: #1259c3;
+  color: var(--meadow);
 }
 
 .left-navbar a,
 .right-navbar a {
   display: block;
   padding: 5px 0;
-  border-bottom: solid 1px var(--gray);
+  border-bottom: solid 1px var(--meadow);
 }
 
 
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url();
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  height: 100px;
 }
 
 
@@ -171,11 +168,11 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: white;
 }
 
 .product-box {
-  background-color: #ffffff;
+  background-color: var(--fade);
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
@@ -187,7 +184,6 @@ hr {
 }
 
 .product-box_image {
-  border-bottom: 1px solid var(--light-gray);
   width: 220px;
   margin-left: auto;
   margin-right: auto;
@@ -200,6 +196,7 @@ hr {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  color: white;
 }
 
 .product-box_data h2 {
@@ -211,14 +208,14 @@ hr {
 .product-box_data span {
   font-size: 1.5em;
   font-weight: 300;
-  color: var(--green);
+  color: white;
   margin: 0 0 0 10px;
 }
 
 .product-box_data p {
   font-size: 1.5em;
   width: 100%;
-  color: var(--gray);
+  color: white;
   margin: 0;
   height: 0;
   transition: 300ms;
@@ -226,7 +223,7 @@ hr {
 }
 
 .product-box_data i {
-  color: var(--green);
+  color: white;
   font-size: 1.8em;
   width: 35px;
   height: 35px;
@@ -236,7 +233,7 @@ hr {
   position: absolute;
   top: -15px;
   right: 15px;
-  background-color: #ffffff;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,11 +241,11 @@ hr {
 }
 
 .noproducts {
-  text-align: center
+  text-align: center;
 }
 
 .product-box:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px var(--spring);
 }
 
 .product-box:hover p {
@@ -258,54 +255,28 @@ hr {
 
 .product-box:hover i {
   transform: rotate(360deg);
-  box-shadow: 0 0 5px var(--green);
+  box-shadow: 0 0 25px var(--meadow);
 }
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
   padding: 20px 0;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
-.footer-data {
-  text-align: center;
+.row{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-
-.footer-data i {
-  color: var(--light-blue);
-  font-size: 3.5em;
-}
-
-.footer-data h2 {
-  color: var(--gray);
-  font-size: 2.4em;
-  font-weight: 400;
-}
-
-.footer-data p {
-  color: var(--gray);
-  font-size: 1.5em;
-  font-weight: 300;
-}
-
-.sub-footer {
-  border-top: 1px solid var(--light-gray);
-  background-color: #ffffff;
-}
-
-.sub-footer p {
-  margin: 0;
-  color: var(--gray);
-  padding: 15px 0;
-}
-
 
 /*====== Product Detail ======*/
 .product-detail {
-  background-color: #ffffff;
+  background-color: var(--fade);
   border-radius: 8px;
   overflow: hidden;
+  color: white;
 }
 
 .product-detail-img {
@@ -315,7 +286,6 @@ hr {
 }
 
 .product-detail-info {
-  border-right: 1px solid var(--light-gray);
   padding: 15px;
   /* height: 100%; */
 }
@@ -329,6 +299,7 @@ hr {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  color: white;
 }
 
 .product-detail-price {
@@ -342,7 +313,7 @@ hr {
 }
 .small {
   font-size: 1.8em;
-  color: var(--green);
+  color: white;
 }
 
 .small span {
@@ -361,21 +332,21 @@ hr {
 }
 
 .actions-list i {
-  color: var(--green);
+  color: white;
   font-size: 2em;
   margin-right: 15px;
 }
 
 .actions-list p {
-  color: var(--gray);
+  color: white;
   font-size: 1.7em;
   margin: 0;
 }
 
 .buy-now-button {
-  background-color: var(--light-blue);
+  background-color: var(--fade);
   font-size: 1.6em;
-  color: #ffffff;
+  color: var(--seaweed);
   padding: 15px;
   border-radius: 8px;
   border: none;
@@ -386,7 +357,7 @@ hr {
   border: none;
   border-radius: 8px;
   font-size: 1.2em;
-  color: #ffffff;
+  color: var(--fade);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -404,9 +375,8 @@ hr {
   padding: 30px 15px 15px 0;
 }
 .comments article{
-  margin-bottom: 7.5px;
-  padding-bottom: 7.5px;
-  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
   display: flex;
   justify-content: space-between;
 }
@@ -424,7 +394,7 @@ hr {
   margin-top: 0;
 }
 .comments .user{
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
 
 /*====== Formularios ======*/
@@ -442,7 +412,7 @@ hr {
   font-size: 1.5em;
   border-radius: 8px;
   border: none;
-  border: solid 1px var(--gray);
+  border: solid 1px white;
   padding: 0 15px;
 }
 
@@ -459,9 +429,9 @@ textarea.form-input {
 
 /*====== Profile ======*/
 .info-usuario{
-  border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
   font-size: 16px;
+  color: white;
 }
 
 .foto-perfil{
@@ -474,10 +444,10 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: var(--sapphire);
   padding: 10px 20px;
   border-radius: 4px;
-  color: #fff;
+  color: white;
 }
 
 
@@ -502,7 +472,9 @@ textarea.form-input {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    color: white;
+    margin: 10px;
   }
 
   .left-navbar a,
@@ -512,7 +484,7 @@ textarea.form-input {
 
   .left-navbar a:hover,
   .right-navbar a:hover {
-    color: var(--light-blue);
+    color: white;
   }
 
   .left-navbar li {
