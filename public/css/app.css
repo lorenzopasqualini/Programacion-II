@@ -157,15 +157,6 @@ hr {
 }
 
 /*====== Banner ======*/
-.banner {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-.foto{
-  height: 600px;
-  border-radius: 50px;
-}
 
 /*====== Products ======*/
 
@@ -425,7 +416,7 @@ hr {
   box-shadow:3px 3px 4px rgba(0,0,0,0.2);
 }
 
-.login-dark .illustration {
+.login-dark {
   text-align:center;
   padding:15px 0 20px;
   font-size:100px;
@@ -458,7 +449,7 @@ hr {
   outline:none;
 }
 
-.login-dark form .forgot {
+.login-dark form {
   display:block;
   text-align:center;
   font-size:12px;
@@ -467,7 +458,7 @@ hr {
   text-decoration:none;
 }
 
-.login-dark form .forgot:hover, .login-dark form .forgot:active {
+.login-dark form, .login-dark form {
   opacity:1;
   text-decoration:none;
 }
