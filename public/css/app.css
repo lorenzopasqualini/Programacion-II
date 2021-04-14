@@ -400,33 +400,32 @@ hr {
 }
 
 /*====== Formularios ======*/
-.form-label {
-  display: inline-block;
-  font-size: 1.6em;
-  margin: 10px 0;
+.form-title{
+  color: white;
+  text-align: center;
 }
 
-.form-input {
-  display: block;
-  width: 100%;
-  height: 45px;
-  margin-bottom: 15px;
-  font-size: 1.5em;
-  border-radius: 8px;
-  border: none;
-  border: solid 1px white;
-  padding: 0 15px;
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+#form{
+  padding: 3rem;
+  border-radius: 25px;
+  background-color: var(--fade);
+}
+
+.form-input{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  gap: 25px;
 }
 
 .error{
-  color: rgb(209, 0, 0);
+  color: red;
   font-size: 1.4em;
-}
-
-textarea.form-input {
-  min-height: 140px;
-  resize: vertical;
-  padding: 15px;
 }
 
 /*====== Profile ======*/
