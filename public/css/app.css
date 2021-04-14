@@ -31,6 +31,7 @@ body {
   background-image: url(/images/tlFondo.png);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 ul,
