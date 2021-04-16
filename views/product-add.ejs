@@ -4,22 +4,44 @@
 <body>
 	<%- include('./partials/headerLogueado') %>
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario para agregar prodcutos al catálogo. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+	<form class="form-horizontal" style="margin: 0 500px 0 500px;">
+		<div>
 
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="vinyl">Título del álbum</label>  
+		  <div class="col-md-4">
+		  	<input id="product_name" name="product_name" class="form-control input-md" required="" type="text">
+		  </div>
+		</div>
+		
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="artist">Nombre del artista</label>  
+		  <div class="col-md-4">
+		  	<input id="comment" name="comment" class="form-control input-md" required="" type="text">
+		  </div>
+		</div>
 
-			<%- include('./partials/footer') %>
+		<!-- File Button --> 
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="image"> Foto del vinilo </label>
+		  <div class="col-md-4">
+			<input id="filebutton" name="filebutton" class="input-file" type="file">
+		  </div>
+		</div>
+		
+		<!-- Button -->
+		<div class="form-group">
+		<label class="col-md-4 control-label" for="filebutton"></label>
+		  <div class="col-md-4">
+			<button id="singlebutton" class="btn btn-primary">Subir</button>
+		  </div>
+		</div>
+		
+		</div>
+	</form>
+		
+	<%- include('./partials/footer') %>
 </body>
-
 </html>

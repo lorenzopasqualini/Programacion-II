@@ -4,21 +4,32 @@
 <body>
 	<%- include('./partials/headerLogueado') %>
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Editar mi perfil</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de edición de datos del perfil de usuario. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos deñ usuario<br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="/images/users/default-image.png" style="border-radius: 200px;"><br><span class="font-weight-bold">Sebastián Juárez</span><span class="text-black-50">sebastianjuarez@icloud.com</span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Editar perfil</h4>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Mail</label><input type="text" class="form-control" value=""></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Nueva contraseña</label><input type="text" class="form-control" value=""></div>
+                    <div class="col-md-6"><label class="labels">Confirmar contraseña</label><input type="text" class="form-control" value=""></div>
+                </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Aplicar</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
-			<%- include('./partials/footer') %>
+	<%- include('./partials/footer') %>
 </body>
 
 </html>
