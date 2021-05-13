@@ -1,30 +1,35 @@
-module.exports = (sequelize, dataTypes) => {
-    let alias = "User";
-    let cols = {
-        id: {
-            type: dataTypes.INTEGER,
+module.exports= (sequelize, dataTypes)=>{
+    let alias= 'User';
+
+    let cols={
+        id:{
+            autoincrement: true,
             primaryKey: true,
-            autoIncrement: true
+            type: dataTypes.INTEGER
         },
-        userName: {
-            type: dataTypes.STRING(30)
-
-        },
-        email: {
+        userName:{
             type: dataTypes.STRING
-
         },
-        password: {
+        email:{
             type: dataTypes.STRING
-
         },
+        password:{
+            type: dataTypes.STRING
+        },
+        createdAt:{
+            type: dataTypes.DATE
+        },
+        updatedAt:{
+            type: dataTypes.DATE
+        },
+    };
 
+    let config={
+        table: 'User',
+        timeStamps: false
     };
-    let config = {
-        table: 'users',
-        timestamps: true,
-        underscored: false
-    };
-    const User = sequelize.define(alias, cols, config);
+
+    const User= sequelize.define(alias, cols, config);
+
     return User;
 }

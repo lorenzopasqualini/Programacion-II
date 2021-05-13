@@ -3,7 +3,7 @@ var router = express.Router();
 const productController= require('../controllers/productController');
 const profileController= require('../controllers/profileController');
 
-router.get('/', productController.product);
+router.get('/id/:id', productController.product);
 router.get('/add', productController.add);
 router.get('/profile', profileController.profile);
 router.get('/profile/edit', profileController.edit);
