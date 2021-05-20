@@ -8,7 +8,7 @@ module.exports= (sequelize, dataTypes)=>{
             type: dataTypes.INTEGER
         },
         image:{
-            type: dataTypes.STRING,
+            type: dataTypes.STRING
         },
         title:{
             type: dataTypes.STRING
