@@ -43,7 +43,7 @@ CREATE TABLE `comentarios` (
 
 LOCK TABLES `comentarios` WRITE;
 /*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
-INSERT INTO `comentarios` VALUES (1,1,1,'Muy bueno',NULL,NULL),(2,2,1,'Increible',NULL,NULL),(3,3,1,'Hay mejores',NULL,NULL),(4,4,1,'El mejor',NULL,NULL),(5,1,2,'Cool',NULL,NULL),(6,2,2,'Uff',NULL,NULL),(7,3,2,'Muy bueno',NULL,NULL),(8,5,2,'Este es mi favorito',NULL,NULL),(9,3,3,'Muy bueno',NULL,NULL),(10,4,3,'Excelente',NULL,NULL),(11,1,3,'Cool',NULL,NULL),(12,2,3,'Uff',NULL,NULL),(13,3,4,'Muy bueno',NULL,NULL),(14,4,4,'Excelente',NULL,NULL),(15,1,4,'Cool',NULL,NULL),(16,2,4,'Uff',NULL,NULL),(17,3,5,'Muy bueno',NULL,NULL),(18,4,5,'Excelente',NULL,NULL),(19,1,5,'Cool',NULL,NULL),(20,2,5,'Uff',NULL,NULL),(21,3,6,'Muy bueno',NULL,NULL),(22,4,6,'Excelente',NULL,NULL),(23,1,6,'Cool',NULL,NULL),(24,2,6,'Uff',NULL,NULL),(25,3,7,'Muy bueno',NULL,NULL),(26,4,7,'Excelente',NULL,NULL),(27,1,7,'Cool',NULL,NULL),(28,2,7,'Uff',NULL,NULL),(29,3,8,'Muy bueno',NULL,NULL),(30,4,8,'Excelente',NULL,NULL),(31,1,8,'Cool',NULL,NULL),(32,2,8,'Uff',NULL,NULL),(33,3,9,'Muy bueno',NULL,NULL),(34,4,9,'Excelente',NULL,NULL),(35,1,9,'Cool',NULL,NULL),(36,2,9,'Uff',NULL,NULL),(37,3,10,'Muy bueno',NULL,NULL),(38,4,10,'Excelente',NULL,NULL),(39,1,10,'Cool',NULL,NULL),(40,2,10,'Uff',NULL,NULL);
+INSERT INTO `comentarios` VALUES (1,1,1,'Muy bueno',NULL,NULL),(2,2,1,'Increible',NULL,NULL),(3,3,1,'Hay mejores',NULL,NULL),(4,4,1,'El mejor',NULL,NULL),(5,1,2,'Cool',NULL,NULL),(6,2,2,'Uff',NULL,NULL),(7,3,2,'Muy bueno',NULL,NULL),(8,5,2,'Este es mi favorito',NULL,NULL),(9,3,3,'Muy bueno',NULL,NULL),(11,1,3,'Cool',NULL,NULL),(12,2,3,'Uff',NULL,NULL),(13,3,4,'Muy bueno',NULL,NULL),(14,4,4,'Excelente',NULL,NULL),(15,1,4,'Cool',NULL,NULL),(16,2,4,'Uff',NULL,NULL),(17,3,5,'Muy bueno',NULL,NULL),(18,4,5,'Excelente',NULL,NULL),(19,1,5,'Cool',NULL,NULL),(20,2,5,'Uff',NULL,NULL),(21,3,6,'Muy bueno',NULL,NULL),(22,4,6,'Excelente',NULL,NULL),(23,1,6,'Cool',NULL,NULL),(24,2,6,'Uff',NULL,NULL),(25,3,7,'Muy bueno',NULL,NULL),(26,4,7,'Excelente',NULL,NULL),(27,1,7,'Cool',NULL,NULL),(28,2,7,'Uff',NULL,NULL),(29,3,8,'Muy bueno',NULL,NULL),(30,4,8,'Excelente',NULL,NULL),(31,1,8,'Cool',NULL,NULL),(32,2,8,'Uff',NULL,NULL);
 /*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'imagen1.jpg','MEMORY','VIVIAN GIRLS',1,NULL,NULL),(2,'imagen2.jpg','DRAX','TRILOGY SPECIAL FINAL EDITION',2,NULL,NULL),(3,'imagen3.jpg','VARIOUS','SOMETHING NEW',3,NULL,NULL),(4,'imagen4.jpg','CHRISTINA AGUILERA','CHRISTINA AGUILERA',4,NULL,NULL),(5,'imagen5.jpg','NITZER EBB','1982-2010',5,NULL,NULL),(6,'imagen6.jpg','WOP','2567',3,NULL,NULL),(7,'imagen7.jpg','KOL','AQUA',5,NULL,NULL),(8,'imagen8.jpg','YES','LETS GO',4,NULL,NULL),(9,'imagen9.jpg','HELLO','JOJO',1,NULL,NULL),(10,'imagen10.jpg','WELL','SOSO',3,NULL,NULL);
+INSERT INTO `products` VALUES (1,'imagen1.png','UNFOLD THE GOD MAN','PSYCHONAUT',1,NULL,NULL),(2,'imagen2.png','HUMAN TRAFFIC JAM','VR SEX',2,NULL,NULL),(3,'imagen3.png','FLOOR IT!!!','THE TEXAS GENTLEMEN',3,NULL,NULL),(4,'imagen4.png','DEVIL`S CRUSH & ALIEN CRUSH SOUNDTRACKS','TOSHIAKI SAKODA',4,NULL,NULL),(5,'imagen5.png','ISSUES VA001','VARIOUS',5,NULL,NULL),(6,'imagen6.png','VIBRATIONS FROM THE COSMIC VOID','VIBRAVOID',3,NULL,NULL),(7,'imagen7.png','VICTIM OF SONIC ATTACK!','HAWKWIND',5,NULL,NULL),(8,'imagen8.png','THE DEATH OF GAIA','OFFICIUM TRISTE',4,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-12 13:08:44
+-- Dump completed on 2021-05-21 16:32:51
