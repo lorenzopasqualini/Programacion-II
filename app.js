@@ -10,6 +10,9 @@ const registerRouter = require('./routes/register');
 const profileRouter = require('./routes/profile');
 const productRouter = require('./routes/product');
 
+const session= require('express-session');
+const db = require('./database/models');
+
 var app = express();
 
 // view engine setup
@@ -21,6 +24,40 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: "lpasqualini/tfaur",
+  resave: false,
+  saveUninitialized: true
+}))
+
+app.use((req, res, next)=>{
+  if(req.session.user != null){
+    res.locals= req.session.user;
+  }
+  else{
+    res.locals= null;
+  }
+  return next();
+})
+
+app.use((req, res, next)=>{
+  if(req.cookies.userId != undefined && req.session.user == undefined){
+    let idCookie= req.cookies.userId;
+
+      db.User.findByPk(idCookie)
+        .then(user=>{
+          req.session.user= user;
+          res.locals= user;
+        })
+        .catch(error=>{
+          console.log(error);
+        })
+    return next();
+  }
+  else{
+    return next();
+  }
+})
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);

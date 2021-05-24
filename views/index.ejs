@@ -1,11 +1,19 @@
 	<%- include('./partials/head') %>
 <body>
-	<%- include('./partials/headerDeslogueado') %>
+	<% if(locals.userName != null){ %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/headerDeslogueado') %>
+	<% } %>
+
+	<% if(locals.userName){ %>
+		<h2 style="text-align: center; color: white;">Welcome, <%= locals.userName %></h2>
+	<% } %>
 
 	<!-- Banner -->
-	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: 0 356px 0 356px;">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: 0 300px 0 300px;">
 		<!-- Wrapper for slides -->
-		  <div class="carousel-inner" style="border-radius: 25px;">
+		  <div class="carousel-inner" style="border-radius: 100px;">
 			<div class="item active">
 			  <img src="/images/vinyls-3.png" alt="">
 			</div>
@@ -38,7 +46,7 @@
 						<section class="product-box">
 							<a href="product/id/<%= product[i].id %>">
 								<figure class="product-box_image">
-									<img src="" alt="<%= product[i].id %>">
+									<img src="/images/products/<%= product[i].image %>" alt="<%= product[i].id %>">
 								</figure>
 								<article class="product-box_data">
 									<h2> <%= product[i].title %> </h2>
@@ -57,5 +65,5 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</body>	
+</body>
 </html>

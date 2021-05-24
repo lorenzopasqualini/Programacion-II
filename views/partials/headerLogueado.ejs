@@ -22,20 +22,14 @@
 
 		<nav class="main-navbar">
 			<ul class="left-navbar">
-				<li><a href="/">Todos los vinilos</a></li>
 				<li><a href="/product/create">Cargar vinilo</a></li>
 			</ul>
-
 			<ul class="right-navbar">
-				<li><a href="/profile">
-						Username <i class="fas fa-user"></i>
-					</a>
+				<li><a href="/profile"> <%= locals.userName %> <i class="fas fa-user"></i></a>
 				</li>
 				<li>
-					<form action="" method="post">
-						<button class="logout" type="submit">
-							Cerrar sesión <i class="fas fa-sign-in-alt"></i>
-						</button>
+					<form action="/login/logout" method="post">
+						<button type="submit">Logout</button>
 					</form>
 				</li>
 			</ul>

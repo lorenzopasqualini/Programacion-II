@@ -43,7 +43,7 @@ const productController={
                 {id: productDelete}
             ]
         })
-            .then(productDelete=>{
+            .then(()=>{
                 return res.redirect('/')
             })
             .catch(error=>{
