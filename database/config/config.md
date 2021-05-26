@@ -1,3 +1,5 @@
+
+//archivo base
 module.exports= {
   "development": {
     "username": "root",

@@ -17,26 +17,32 @@ const productController={
     },
 
     store: (req, res)=>{
-        let data= req.body;
+        if(req.session.user != undefined){
+            let data= req.body;
 
-        let product={
-            image: data.image,
-            title: data.title,
-            artistName: data.artistName,
-            userId: 1
-        };
+            let product={
+                image: data.image,
+                title: data.title,
+                artistName: data.artistName,
+                userId: req.session.user,
+            };
 
-        db.Product.create(product)
-            .then(()=>{
-                return res.redirect('/')
-            })
-            .catch(error=>{
-                console.log(error);
-            })
+            db.Product.create(product)
+                .then(()=>{
+                    return res.redirect('/')
+                })
+                .catch(error=>{
+                    console.log(error);
+                })
+        }
+        else{
+            res.redirect('/');
+        }
     },
 
     destroy: (req, res)=>{
         let productDelete= req.params.id;
+        console.log(productDelete);
         
         db.Product.destroy({
             where:[
