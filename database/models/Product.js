@@ -29,7 +29,7 @@ module.exports= (sequelize, dataTypes)=>{
     };
 
     let config={
-        table: 'Product',
+        table: 'products',
         timeStamps: false
     };
 
