@@ -46,6 +46,8 @@ module.exports= (sequelize, dataTypes)=>{
         })
         
     }
-
+ 
     return Comentario;
 }
+
+

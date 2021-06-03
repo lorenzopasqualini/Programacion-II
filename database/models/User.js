@@ -35,13 +35,11 @@ module.exports= (sequelize, dataTypes)=>{
         User.hasMany(models.Product,{
             as: 'products',
             foreignKey: 'userId'
+    }),
+    User.hasMany(models.Comentario, {as: 'comentario', foreignKey:'userId'
 
-        }),
-        User.hasMany(models.Comentario, {as: 'comentario', foreignKey:'userId'
-
-        })
-    }
-
+})
+   }
 
     return User;
 }
