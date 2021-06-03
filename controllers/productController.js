@@ -24,7 +24,7 @@ const productController={
                 image: data.image,
                 title: data.title,
                 artistName: data.artistName,
-                userId: req.session.user,
+                userId: req.session.user.id,
             };
 
             db.Product.create(product)

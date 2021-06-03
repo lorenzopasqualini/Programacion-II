@@ -11,6 +11,7 @@
 
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= product.title %> </h2>
+			<% if(locals.userName != undefined){ %> 
 			<p class="product-detail-description">
 				<form action="/product/update/<%= product.id %>" method="POST">
 					<button type="submit">Editar</button>
@@ -19,6 +20,7 @@
 					<button type="submit">Borrar</button>
 				</form>
 			</p>
+			<% } else{} %>
 		</div>
 
 		<div class="product-detail">
