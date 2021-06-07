@@ -13,7 +13,7 @@
 			<h2 class="products-title"> <%= product.title %> </h2>
 			<% if(locals.userName != undefined){ %> 
 			<p class="product-detail-description">
-				<form action="/product/update/<%= product.id %>" method="POST">
+				<form action="/product/id/<%= product.id %>/edit" method="POST">
 					<button type="submit">Editar</button>
 				</form>
 				<form action="/product/destroy/<%= product.id %>" method="POST">
@@ -26,7 +26,7 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/tn-the-texas-gentlemen-floor-it.png" alt="" class="product-detail-img">
+					<img src="/images/products/<%= product.image %>" alt="image" class="product-detail-img">
 					<p class="product-detail-description"> <%= product.artistName %> </p>
 				</article>
 

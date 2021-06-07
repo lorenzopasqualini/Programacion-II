@@ -2,7 +2,8 @@
 <body>
 	<%- include('./partials/headerLogueado') %>
 
-	<form action="/product/store" method="post">
+	<form action="/product/store" method="post" enctype="multipart/form-data">
+		<input type="file" name="image" placeholder="Image">
 		<input type="text" name="title" placeholder="Title">
 		<input type="text" name="artistName" placeholder="Artist Name">
 		<button type="submit">Guardar</button>
