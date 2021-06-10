@@ -14,8 +14,7 @@ const registerController={
         let user={
             userName: req.body.userName,
             email: req.body.email,
-            password: brcrypt.hashSync(req.body.password, 10),
-            avatar: req.file.filename
+            password: brcrypt.hashSync(req.body.password, 10)
         };
 
         db.User.create(user)
@@ -29,10 +28,6 @@ const registerController={
         let errors={};
         if(req.body.email || req.body.password == ''){
             errors.message= 'Hay campos obligatorios vacíos';
-            res.locals.errors= errors;
-            return res.render('register')
-        } else if(req.file.mimetype !== 'image/png' && req.file.mimetype !== 'image/jpg'){
-            errors.message= 'La foto de perfil debe ser un archivo JPG o PNG';
             res.locals.errors= errors;
             return res.render('register')
         } else {

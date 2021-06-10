@@ -36,7 +36,6 @@ const profileController={
             userName: req.body.userName,
             email: req.body.email,
             password: '',
-            avatar: '',
         };
 
         if(req.body.password == ''){
@@ -44,12 +43,6 @@ const profileController={
         } else {
             user.password= brcrypt.hashSync(req.body.password, 10)
         };
-
-        if(req.file == undefined){
-            user.avatar= req.session.user.avatar
-        } else {
-            user.avatar= req.file.filename
-        }
 
         db.User.update(user, {
             where:{id: req.session.user.id}
