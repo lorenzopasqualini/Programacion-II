@@ -87,7 +87,6 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `avatar` varchar(255) DEFAULT NULL,
   `userName` varchar(30) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -103,7 +102,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,'Martin Lopez','martinlopez@gmail.com','3901',NULL,NULL),(2,NULL,'Pedro Leon','pedroleon@gmail.com','bocapasion12',NULL,NULL),(3,NULL,'Sofia Perez','sofiperezn@gmail.com','218907lzv',NULL,NULL),(4,NULL,'Martina Zunino','martinazunino2012@gmail.com','4690uno',NULL,NULL),(5,NULL,'Jose Maria Caceres','josecaceres@gmail.com','Codjdj890',NULL,NULL);
+INSERT INTO `users` VALUES (1,'Martin Lopez','martinlopez@gmail.com','3901',NULL,NULL),(2,'Pedro Leon','pedroleon@gmail.com','bocapasion12',NULL,NULL),(3,'Sofia Perez','sofiperezn@gmail.com','218907lzv',NULL,NULL),(4,'Martina Zunino','martinazunino2012@gmail.com','4690uno',NULL,NULL),(5,'Jose Maria Caceres','josecaceres@gmail.com','Codjdj890',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -116,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-09 12:40:06
+-- Dump completed on 2021-06-11 11:31:14
