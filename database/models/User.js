@@ -7,9 +7,6 @@ module.exports= (sequelize, dataTypes)=>{
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        avatar:{
-            type: dataTypes.STRING
-        },
         userName:{
             type: dataTypes.STRING
         },
