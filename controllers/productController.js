@@ -7,19 +7,14 @@ const productController={
         let product= db.Product.findByPk(id, {
             include: [
                 {association: 'user'},
-                {association: 'comentario'}
+                {association: 'comentario',
+                include:[
+                    {association: 'user'}
+                ]}
             ]
         })
-
-        let comentario= db.Comentario.findAll({
-            where: [
-                {productsId: id}
-            ]
-        })
-
-        Promise.all([product, comentario])
-            .then((product, comentario)=>{
-                return res.render('product', {product: product, comentario: comentario})
+            .then((product)=>{
+                return res.render('product', {product: product})
             })
             .catch(err=>{console.log(err);})
     },

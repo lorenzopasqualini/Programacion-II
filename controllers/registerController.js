@@ -13,8 +13,12 @@ const registerController={
     store: (req, res)=>{
         let errors={};
 
-        if(req.body.email == '' || req.body.password == ''){
-            err.message= 'Hay campos obligatorios vacíos';
+        if(req.body.email == ''){
+            error.message= 'Hay campos obligatorios vacíos';
+            res.locals.error= errors;
+            return res.render('register')
+        } else if(req.body.password == '') {
+            error.message= 'Hay campos obligatorios vacíos';
             res.locals.error= errors;
             return res.render('register')
         } else {
@@ -23,7 +27,7 @@ const registerController={
             })
                 .then(user=>{
                     if(user != null){
-                        err.message= 'E-Mail ya registrado. Intenta con otro.';
+                        error.message= 'E-Mail ya registrado. Intenta con otro.';
                         res.locals.errors= errors;
                         return res.render('register')
                     } else {
