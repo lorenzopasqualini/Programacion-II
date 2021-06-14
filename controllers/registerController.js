@@ -11,27 +11,35 @@ const registerController={
     },
 
     store: (req, res)=>{
-        let user={
-            userName: req.body.userName,
-            email: req.body.email,
-            password: brcrypt.hashSync(req.body.password, 10)
-        };
-
-        db.User.create(user)
-            .then(()=>{
-                return res.redirect('/login')
-            })
-            .catch(error=>{
-                console.log(error);
-            })
-
         let errors={};
-        if(req.body.email || req.body.password == ''){
-            errors.message= 'Hay campos obligatorios vacíos';
-            res.locals.errors= errors;
+
+        if(req.body.email == '' || req.body.password == ''){
+            err.message= 'Hay campos obligatorios vacíos';
+            res.locals.error= errors;
             return res.render('register')
         } else {
-            return res.render('register')
+            db.User.findOne({
+                where: [{email: req.body.email}]
+            })
+                .then(user=>{
+                    if(user != null){
+                        err.message= 'E-Mail ya registrado. Intenta con otro.';
+                        res.locals.errors= errors;
+                        return res.render('register')
+                    } else {
+                        let user={
+                            userName: req.body.userName,
+                            email: req.body.email,
+                            password: brcrypt.hashSync(req.body.password, 10)
+                        };
+                
+                        db.User.create(user)
+                            .then(()=>{
+                                return res.redirect('/login')
+                            })
+                            .catch(err=>{console.log(err);})
+                    }
+                })
         }
     }
 }

@@ -25,7 +25,7 @@
 				<li><a href="/product/create">Cargar vinilo</a></li>
 			</ul>
 			<ul class="right-navbar">
-				<li><a href="/profile/<%= locals.id %>"> <%= locals.userName %> <i class="fas fa-user"></i></a>
+				<li><a href="/profile/<%= locals.user.id %>"> <%= locals.user.userName %> <i class="fas fa-user"></i></a>
 				</li>
 				<li>
 					<form action="/login/logout" method="post">
@@ -36,8 +36,8 @@
 		</nav>
 	</div>
 
-	<% if(locals.userName){ %>
-		<h2 style="text-align: center; color: white;">Welcome, <%= locals.userName %></h2>
+	<% if(locals.user.userName){ %>
+		<h2 style="text-align: center; color: white;">Welcome, <%= locals.user.userName %></h2>
 	<% } %>
 
 </header>

@@ -3,14 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session= require('express-session');
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');
 const profileRouter = require('./routes/profile');
 const productRouter = require('./routes/product');
-
-const session= require('express-session');
 const db = require('./database/models');
 
 var app = express();
@@ -31,12 +30,10 @@ app.use(session({
 }))
 
 app.use((req, res, next)=>{
-  if(req.session.user != null){
-    res.locals= req.session.user;
-  }
-  else{
-    res.locals= null;
-  }
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user;
+    return next()
+  } 
   return next();
 })
 
@@ -47,12 +44,10 @@ app.use((req, res, next)=>{
       db.User.findByPk(idCookie)
         .then(user=>{
           req.session.user= user;
-          res.locals= user;
+          res.locals.user= user;
+          return next();
         })
-        .catch(error=>{
-          console.log(error);
-        })
-    return next();
+        .catch(err=>{console.log(err);})
   }
   else{
     return next();

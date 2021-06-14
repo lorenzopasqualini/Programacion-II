@@ -3,13 +3,25 @@ const db= require('../database/models');
 const productController={
     product: (req, res)=>{
         let id= req.params.id;
-        db.Product.findByPk(id)
-            .then(data=>{
-                return res.render('product', {product: data})
+
+        let product= db.Product.findByPk(id, {
+            include: [
+                {association: 'user'},
+                {association: 'comentario'}
+            ]
+        })
+
+        let comentario= db.Comentario.findAll({
+            where: [
+                {productsId: id}
+            ]
+        })
+
+        Promise.all([product, comentario])
+            .then((product, comentario)=>{
+                return res.render('product', {product: product, comentario: comentario})
             })
-            .catch(error=>{
-                console.log(error);
-            })
+            .catch(err=>{console.log(err);})
     },
 
     create: (req, res)=>{
@@ -17,13 +29,16 @@ const productController={
     },
 
     store: (req, res)=>{
-        if(req.session.user != undefined){
-            let data= req.body;
-
+        let errors={};
+        if(req.body.title == '' || req.body.artistName == ''){
+            errors.message= 'Hay campos obligatorios vacíos';
+            res.locals.errors= errors;
+            return res.render('productCreate')
+        } else {
             let product={
-                image: data.image,
-                title: data.title,
-                artistName: data.artistName,
+                image: req.file.filename,
+                title: req.body.title,
+                artistName: req.body.artistName,
                 userId: req.session.user.id,
             };
 
@@ -31,12 +46,7 @@ const productController={
                 .then(()=>{
                     return res.redirect('/')
                 })
-                .catch(error=>{
-                    console.log(error);
-                })
-        }
-        else{
-            res.redirect('/');
+                .catch(err=>{console.log(err);})
         }
     },
 
@@ -52,9 +62,7 @@ const productController={
             .then(()=>{
                 return res.redirect('/')
             })
-            .catch(error=>{
-                console.log(error);
-            })
+            .catch(err=>{console.log(err);})
     },
 
     edit: (req,res)=> {
@@ -67,9 +75,7 @@ const productController={
             .then(data=>{
                 return res.render('/product/${req.params.id}', {user:data})
             })
-            .catch(error=>{
-                console.log(error);
-            })
+            .catch(err=>{console.log(err);})
         }
     },
 
@@ -95,9 +101,7 @@ const productController={
                 req.session.product= product;
                 return res.redirect('/product')
             })
-            .catch(error=>{
-                console.log(error);
-            })
+            .catch(err=>{console.log(err);})
     }
 }
 

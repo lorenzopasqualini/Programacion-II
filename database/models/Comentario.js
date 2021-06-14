@@ -27,10 +27,9 @@ module.exports= (sequelize, dataTypes)=>{
     };
 
     let config={
-        table: 'comentarios',
-        timeStamps: false
+        table: 'comentario',
+        timestamps: true
     };
-
 
     const Comentario= sequelize.define(alias, cols, config);
 
@@ -38,17 +37,11 @@ module.exports= (sequelize, dataTypes)=>{
         Comentario.belongsTo(models.User,{
             as: 'user',
             foreignKey: 'userId'
-
         }),
         Comentario.belongsTo(models.Product,{
             as: 'product',
             foreignKey: 'productsId'
-
-        })
-        
+        })      
     }
- 
     return Comentario;
 }
-
-

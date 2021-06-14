@@ -9,29 +9,23 @@ const profileController={
             .then(data=>{
                 return res.render('profile', {user:data})
             })
-            .catch(error=>{
-                console.log(error);
-            })
+            .catch(err=>{console.log(err);})
     },
 
     edit: (req,res)=> {
-
-        let userId= req.params.userId;
+        let userId= req.params.id;
         if(userId != req.session.user.id){
             return res.redirect('/profileEdit/${req.session.user.id}')
         } else {
-            db.User.findByPk(id)
+            db.User.findByPk(userId)
             .then(data=>{
                 return res.render('profileEdit', {user:data})
             })
-            .catch(error=>{
-                console.log(error);
-            })
+            .catch(err=>{console.log(err);})
         }
     },
 
     update: (req,res)=>{
-
         let user={
             userName: req.body.userName,
             email: req.body.email,
@@ -52,9 +46,7 @@ const profileController={
                 req.session.user= user;
                 return res.redirect('/profile')
             })
-            .catch(error=>{
-                console.log(error);
-            })
+            .catch(err=>{console.log(err);})
     }
 }
 
