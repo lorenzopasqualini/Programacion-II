@@ -15,7 +15,7 @@ const profileController={
     edit: (req,res)=> {
         let userId= req.params.id;
         if(userId != req.session.user.id){
-            return res.redirect('/profileEdit/${req.session.user.id}')
+            return res.redirect('/profile/${req.session.user.id}/edit')
         } else {
             db.User.findByPk(userId)
             .then(data=>{
@@ -44,7 +44,7 @@ const profileController={
             .then(id=>{
                 user.id= req.session.user.id;
                 req.session.user= user;
-                return res.redirect('/profile')
+                return res.redirect('/')
             })
             .catch(err=>{console.log(err);})
     }

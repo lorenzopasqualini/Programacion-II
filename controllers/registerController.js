@@ -14,11 +14,11 @@ const registerController={
         let errors={};
 
         if(req.body.email == ''){
-            error.message= 'Hay campos obligatorios vacíos';
+            errors.message= 'E-Mail está vacío';
             res.locals.error= errors;
             return res.render('register')
         } else if(req.body.password == '') {
-            error.message= 'Hay campos obligatorios vacíos';
+            errors.message= 'Contraseña está vacía';
             res.locals.error= errors;
             return res.render('register')
         } else {

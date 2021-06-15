@@ -3,7 +3,7 @@
 	<%- include('./partials/headerLogueado') %>
 
     <div>
-        <form action="/profileEdit" enctype="multipart/form-data" method="post">
+        <form action="/profile/<%= user.id %>/update" method="POST">
             <input type="email" name="email" placeholder="E-Mail" value="<%= user.email %>">
             <input type="text" name="userName" placeholder="Username" value="<%= user.userName %>">
             <input type="text" name="password" placeholder="Contrseña">
