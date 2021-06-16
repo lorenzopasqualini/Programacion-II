@@ -25,14 +25,20 @@ const loginController={
             db.User.findOne({
                 where: [{email: req.body.email}]
             })
-                .then((user)=>{
-                    req.session.user= user;
+                .then(user=>{
+                    if(user == null){
+                        errors.message= 'E-Mail no está registrado';
+                        res.locals.error= errors;
+                        return res.render('login')
+                    } else {
+                        req.session.user= user;
     
-                    if(req.body.rememberme != undefined){
-                        res.cookie('userId', user.id, {maxAge: 1000*60*20})   
+                        if(req.body.rememberme != undefined){
+                            res.cookie('userId', user.id, {maxAge: 1000*60*20})   
+                        }
+        
+                        return res.redirect('/');
                     }
-    
-                    return res.redirect('/');
                 })
                 .catch(err=>{console.log(err);})
         }

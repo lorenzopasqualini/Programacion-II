@@ -1,7 +1,7 @@
 const db= require('../database/models');
 
 const productController={
-    product: (req, res)=>{
+    product: (req,res)=>{
         let id= req.params.id;
 
         let product= db.Product.findByPk(id, {
@@ -13,17 +13,17 @@ const productController={
                 ]}
             ]
         })
-            .then((product)=>{
-                return res.render('product', {product: product})
+            .then(data=>{
+                return res.render('product', {product:data})
             })
             .catch(err=>{console.log(err);})
     },
 
-    create: (req, res)=>{
+    create: (req,res)=>{
         res.render('productCreate')
     },
 
-    store: (req, res)=>{
+    store: (req,res)=>{
         let errors={};
         if(req.body.title == '' || req.body.artistName == ''){
             errors.message= 'Hay campos obligatorios vacíos';
@@ -45,7 +45,7 @@ const productController={
         }
     },
 
-    destroy: (req, res)=>{
+    destroy: (req,res)=>{
         let productDelete= req.params.id;
         console.log(productDelete);
         

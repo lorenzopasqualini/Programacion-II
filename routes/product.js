@@ -23,7 +23,7 @@ router.post('/store', upload.single('image') , productController.store);
 
 router.post('/destroy/:id', productController.destroy);
 
-router.get('/id/:id/edit', productController.edit);
-router.post('/id/:id/update', productController.update);
+router.get('/:id/edit', productController.edit);
+router.post('/:id/update', productController.update);
 
 module.exports = router;

@@ -3,8 +3,10 @@ const op = db.Sequelize.Op;
 
 const indexController={
     index: (req,res)=>{
-        db.Product.findAll()
-            .then((data)=>{
+        db.Product.findAll({
+            limit: 4
+        })
+            .then(data=>{
                 return res.render('index', {product: data})
             })
             .catch(err=>{console.log(err);})

@@ -20,6 +20,9 @@ const registerController={
         } else if(req.body.password == '') {
             errors.message= 'Contraseña está vacía';
             res.locals.error= errors;
+        } else if(req.body.userName == '') {
+            errors.message= 'Username está vacío';
+            res.locals.error= errors;
             return res.render('register')
         } else {
             db.User.findOne({
@@ -27,8 +30,8 @@ const registerController={
             })
                 .then(user=>{
                     if(user != null){
-                        error.message= 'E-Mail ya registrado. Intenta con otro.';
-                        res.locals.errors= errors;
+                        errors.message= 'E-Mail ya registrado. Intenta con otro.';
+                        res.locals.error= errors;
                         return res.render('register')
                     } else {
                         let user={
@@ -44,6 +47,7 @@ const registerController={
                             .catch(err=>{console.log(err);})
                     }
                 })
+                .catch(err=>{console.log(err);})
         }
     }
 }

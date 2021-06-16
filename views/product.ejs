@@ -13,7 +13,7 @@
 			<h2 class="products-title"> <%= product.title %> </h2>
 			<% if(locals.user != undefined){ %> 
 			<p class="product-detail-description">
-				<form action="/product/id/<%= product.id %>/edit" method="POST">
+				<form action="/product/<%= product.id %>/edit" method="POST">
 					<button type="submit">Editar</button>
 				</form>
 				<form action="/product/destroy/<%= product.id %>" method="POST">
@@ -35,6 +35,7 @@
 				<!-- Comentarios -->
 				<div>
 					<% for(let i=0; i<product.comentario.length; i++){ %>
+
 						<p><%= product.comentario[i].texto %></p> 
 					<% } %>
 				</div>
