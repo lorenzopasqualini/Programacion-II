@@ -33,7 +33,7 @@ module.exports= (sequelize, dataTypes)=>{
 
     User.associate = (models)=>{
         User.hasMany(models.Product,{
-            as: 'products',
+            as: 'product',
             foreignKey: 'userId'
         }),
         User.hasMany(models.Comentario,{

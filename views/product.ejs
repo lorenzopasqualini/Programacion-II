@@ -35,8 +35,23 @@
 				<!-- Comentarios -->
 				<div>
 					<% for(let i=0; i<product.comentario.length; i++){ %>
+						<div class="comments">
+							<div class="text">
+								<strong><%= product.comentario[i].user.userName %></strong>
+							</div>
+							<div class="text">
+								<p><%= product.comentario[i].texto %></p>
+							</div>
+						</div>
+					<% } %>
 
-						<p><%= product.comentario[i].texto %></p> 
+					<% if(locals.user != undefined){ %>
+						<div class="text">
+							<form action="/product/<%= product.id %>/comment" method="POST" class="form">
+								<input type="text" name="texto" style="background-color: black;">
+								<button type="submit">Guardar</button>
+							</form>
+						</div>
 					<% } %>
 				</div>
 				<!-- /Comentarios -->

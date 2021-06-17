@@ -26,4 +26,6 @@ router.post('/destroy/:id', productController.destroy);
 router.get('/:id/edit', productController.edit);
 router.post('/:id/update', productController.update);
 
+router.post('/:id/comment', productController.comment);
+
 module.exports = router;

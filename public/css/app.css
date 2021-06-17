@@ -257,6 +257,18 @@ hr {
   box-shadow: 0 0 25px var(--meadow);
 }
 
+.comments{
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text{
+  padding: 20px;
+}
+
 /*====== Footer ======*/
 .main-footer {
   padding: 20px 0;

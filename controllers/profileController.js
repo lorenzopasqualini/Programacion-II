@@ -5,7 +5,12 @@ const profileController={
 
     profile: (req,res)=>{
         let id= req.params.id;
-        db.User.findByPk(id)
+
+        let user= db.User.findByPk(id, {
+            include: [
+                {association: 'product'}
+            ]
+        })
             .then(data=>{
                 return res.render('profile', {user:data})
             })

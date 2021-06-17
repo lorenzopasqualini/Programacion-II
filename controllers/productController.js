@@ -25,8 +25,12 @@ const productController={
 
     store: (req,res)=>{
         let errors={};
-        if(req.body.title == '' || req.body.artistName == ''){
-            errors.message= 'Hay campos obligatorios vacíos';
+        if(req.body.title == ''){
+            errors.message= 'El título es obligatorio';
+            res.locals.errors= errors;
+            return res.render('productCreate')
+        } else if(req.body.artistName == '') {
+            errors.message= 'El nombre del artista es obligatorio';
             res.locals.errors= errors;
             return res.render('productCreate')
         } else {
@@ -61,21 +65,19 @@ const productController={
     },
 
     edit: (req,res)=> {
-
         let productId= req.params.id;
         if(productId != req.params.id){
             return res.redirect('/')
         } else {
             db.Product.findByPk(id)
             .then(data=>{
-                return res.render('/product/${req.params.id}', {user:data})
+                return res.redirect('/product/${req.params.id}', {user:data})
             })
             .catch(err=>{console.log(err);})
         }
     },
 
     update: (req,res)=>{
-
         let product={
             image: '',
             title: req.body.title,
@@ -94,9 +96,27 @@ const productController={
             .then(id=>{
                 product.id= req.session.id;
                 req.session.product= product;
-                return res.redirect('/product')
+                return res.redirect('/')
             })
             .catch(err=>{console.log(err);})
+    },
+
+    comment: (req,res)=>{
+        if(req.body.texto == ''){
+            return res.redirect('/')
+        } else {
+            let comentario={
+                texto: req.body.texto,
+                userId: req.session.user.id,
+                productsId: req.session.id,
+            };
+
+            db.Product.create(comentario)
+                .then(()=>{
+                    return res.redirect('/')
+                })
+                .catch(err=>{console.log(err);})
+        }
     }
 }
 
