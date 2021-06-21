@@ -7,6 +7,11 @@
 		<input type="text" name="title" placeholder="Title">
 		<input type="text" name="artistName" placeholder="Artist Name">
 		<button type="submit">Guardar</button>
+		<% if(locals.error){ %>
+			<div class="alert alert-danger">
+				<%= error.message %>
+			</div>
+		<% } %>
 	</form>
 
 	<%- include('./partials/footer') %>

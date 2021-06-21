@@ -24,6 +24,10 @@ const registerController={
             errors.message= 'Username está vacío';
             res.locals.error= errors;
             return res.render('register')
+        } else if(req.body.password.length < 3) {
+            errors.message= 'La contraseña debe tener al menos 3 caracteres';
+            res.locals.error= errors;
+            return res.render('register')
         } else {
             db.User.findOne({
                 where: [{email: req.body.email}]

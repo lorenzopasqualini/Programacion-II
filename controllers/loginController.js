@@ -1,5 +1,5 @@
 const db= require('../database/models');
-const brcrypt= require('bcryptjs');
+const bcrypt= require('bcryptjs');
 
 const loginController={
     login: (req, res)=>{
@@ -30,13 +30,15 @@ const loginController={
                         errors.message= 'E-Mail no está registrado';
                         res.locals.error= errors;
                         return res.render('login')
+                    } else if(bcrypt.compareSync(req.body.password, user.password) == false){
+                        errors.message= "Contraseña incorrecta";
+                        res.locals.error= errors;
+                        return res.render('login')
                     } else {
                         req.session.user= user;
-    
                         if(req.body.rememberme != undefined){
                             res.cookie('userId', user.id, {maxAge: 1000*60*20})   
                         }
-        
                         return res.redirect('/');
                     }
                 })

@@ -27,11 +27,15 @@ const productController={
         let errors={};
         if(req.body.title == ''){
             errors.message= 'El título es obligatorio';
-            res.locals.errors= errors;
+            res.locals.error= errors;
             return res.render('productCreate')
         } else if(req.body.artistName == '') {
             errors.message= 'El nombre del artista es obligatorio';
-            res.locals.errors= errors;
+            res.locals.error= errors;
+            return res.render('productCreate')
+        } else if(req.file.mimetype !== 'image/png') {
+            errors.message= 'La imagen debe ser un archivo png';
+            res.locals.error= errors;
             return res.render('productCreate')
         } else {
             let product={
@@ -65,16 +69,12 @@ const productController={
     },
 
     edit: (req,res)=> {
-        let productId= req.params.id;
-        if(productId != req.params.id){
-            return res.redirect('/')
-        } else {
-            db.Product.findByPk(id)
-            .then(data=>{
-                return res.redirect('/product/${req.params.id}', {user:data})
-            })
-            .catch(err=>{console.log(err);})
-        }
+        let id= req.params.id;
+        db.Product.findByPk(id)
+        .then(data=>{
+            return res.render('productEdit', {product:data})
+        })
+        .catch(err=>{console.log(err);})
     },
 
     update: (req,res)=>{
@@ -108,10 +108,10 @@ const productController={
             let comentario={
                 texto: req.body.texto,
                 userId: req.session.user.id,
-                productsId: req.session.id,
+                productsId: req.params.id,
             };
 
-            db.Product.create(comentario)
+            db.Comentario.create(comentario)
                 .then(()=>{
                     return res.redirect('/')
                 })

@@ -4,7 +4,10 @@ const op = db.Sequelize.Op;
 const indexController={
     index: (req,res)=>{
         db.Product.findAll({
-            limit: 4
+            limit: 4,
+            order: [
+                ['id', 'DESC']
+            ]
         })
             .then(data=>{
                 return res.render('index', {product: data})
@@ -18,6 +21,9 @@ const indexController={
         db.Product.findAll({
             where:[
                 {title:{[op.like]: '%' + search + '%'}}
+            ],
+            include: [
+                {association: 'user'}
             ]
         })
             .then(data=>{

@@ -1,21 +1,27 @@
 	<%- include('./partials/head') %>
 <body>
-	<%- include('./partials/headerLogueado') %>
+	<% if(locals.user != undefined){ %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/headerDeslogueado') %>
+	<% } %>
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= locals.user.userName %>
-						<a href="/profile/<%= locals.user.id %>/edit">
+					<h1 class="main-title"> <%= data.userName %>
+						<% if(locals.user.id == data.id){ %>
+						<a href="/profile/<%= data.id %>/edit">
 							<i class="fas fa-cog"></i>
 						</a>
+						<% } %>
 					</h1>
 				</div>
 				<div>
 					<ul class="info-usuario">
-						<li><%= locals.user.email %></li>
+						<li><%= data.email %></li>
 					</ul>
 				</div>
 			</div>
@@ -27,19 +33,23 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
+				<h2 class="products-title">Comentarios: <%= data.comentario.length %></h2>
+			</div>
+
+			<div class="col-12">
 				<h2 class="products-title">Catálogo</h2>
 			</div>
 
-		<% for(let i=0; i<user.product.length; i++){ %>
+		<% for(let i=0; i<data.product.length; i++){ %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product/id/<%= user.product[i].id %>">
+					<a href="/product/id/<%= data.product[i].id %>">
 						<figure class="product-box_image">
-							<img src="/images/products/<%= user.product[i].image %>" alt="Image">
+							<img src="/images/products/<%= data.product[i].image %>" alt="Image">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= user.product[i].title %></h2>
-							<p><%= user.product[i].artistName %></p>
+							<h2><%= data.product[i].title %></h2>
+							<p><%= data.product[i].artistName %></p>
 						</article>
 					</a>
 				</section>

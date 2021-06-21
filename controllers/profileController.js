@@ -6,13 +6,14 @@ const profileController={
     profile: (req,res)=>{
         let id= req.params.id;
 
-        let user= db.User.findByPk(id, {
+        db.User.findByPk(id, {
             include: [
-                {association: 'product'}
+                {association: 'product'},
+                {association: 'comentario'}
             ]
         })
             .then(data=>{
-                return res.render('profile', {user:data})
+                return res.render('profile', {data:data})
             })
             .catch(err=>{console.log(err);})
     },
