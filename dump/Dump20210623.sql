@@ -34,7 +34,7 @@ CREATE TABLE `comentarios` (
   KEY `comentarios_ibfk_2` (`productsId`),
   CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`productsId`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `comentarios` (
 
 LOCK TABLES `comentarios` WRITE;
 /*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
-INSERT INTO `comentarios` VALUES (1,1,1,'Muy bueno',NULL,NULL),(2,2,1,'Increible',NULL,NULL),(3,3,1,'Hay mejores',NULL,NULL),(4,4,1,'El mejor',NULL,NULL),(5,1,2,'Cool',NULL,NULL),(6,2,2,'Uff',NULL,NULL),(7,3,2,'Muy bueno',NULL,NULL),(8,5,2,'Este es mi favorito',NULL,NULL),(9,3,3,'Muy bueno',NULL,NULL),(11,1,3,'Cool',NULL,NULL),(12,2,3,'Uff',NULL,NULL),(13,3,4,'Muy bueno',NULL,NULL),(14,4,4,'Excelente',NULL,NULL),(15,1,4,'Cool',NULL,NULL),(16,2,4,'Uff',NULL,NULL),(17,3,5,'Muy bueno',NULL,NULL),(18,4,5,'Excelente',NULL,NULL),(19,1,5,'Cool',NULL,NULL),(20,2,5,'Uff',NULL,NULL),(21,3,6,'Muy bueno',NULL,NULL),(22,4,6,'Excelente',NULL,NULL),(23,1,6,'Cool',NULL,NULL),(24,2,6,'Uff',NULL,NULL),(25,3,7,'Muy bueno',NULL,NULL),(26,4,7,'Excelente',NULL,NULL),(27,1,7,'Cool',NULL,NULL),(28,2,7,'Uff',NULL,NULL),(29,3,8,'Muy bueno',NULL,NULL),(30,4,8,'Excelente',NULL,NULL),(31,1,8,'Cool',NULL,NULL),(32,2,8,'Uff',NULL,NULL);
+INSERT INTO `comentarios` VALUES (34,8,10,'Muy bueno','2021-06-23 21:06:05','2021-06-23 21:06:05'),(35,8,9,'Tremendo','2021-06-23 21:06:12','2021-06-23 21:06:12'),(36,9,11,'Muy copado','2021-06-23 21:09:33','2021-06-23 21:09:33'),(37,9,9,'Genial','2021-06-23 21:09:58','2021-06-23 21:09:58'),(38,10,13,'Cool','2021-06-23 21:23:13','2021-06-23 21:23:13'),(39,10,12,'Que buen viniloo','2021-06-23 21:23:34','2021-06-23 21:23:34'),(40,11,17,'Wow!','2021-06-23 21:26:53','2021-06-23 21:26:53');
 /*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,9 +63,9 @@ CREATE TABLE `products` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `userId` (`userId`),
-  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  KEY `products_ibfk_1` (`userId`),
+  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'imagen1.png','UNFOLD THE GOD MAN','PSYCHONAUT',1,NULL,NULL),(2,'imagen2.png','HUMAN TRAFFIC JAM','VR SEX',2,NULL,NULL),(3,'imagen3.png','FLOOR IT!!!','THE TEXAS GENTLEMEN',3,NULL,NULL),(4,'imagen4.png','DEVIL`S CRUSH & ALIEN CRUSH SOUNDTRACKS','TOSHIAKI SAKODA',4,NULL,NULL),(5,'imagen5.png','ISSUES VA001','VARIOUS',5,NULL,NULL),(6,'imagen6.png','VIBRATIONS FROM THE COSMIC VOID','VIBRAVOID',3,NULL,NULL),(7,'imagen7.png','VICTIM OF SONIC ATTACK!','HAWKWIND',5,NULL,NULL),(8,'imagen8.png','THE DEATH OF GAIA','OFFICIUM TRISTE',4,NULL,NULL);
+INSERT INTO `products` VALUES (9,'image-1624481715734.png','LOVE LETTER','FABIO MONESI',7,'2021-06-23 20:55:15','2021-06-23 20:55:15'),(10,'image-1624481794686.png','UNFOLD THE GOD MAN','PSYCHONAUT',7,'2021-06-23 20:56:34','2021-06-23 20:56:34'),(11,'image-1624481987289.png','THE DEATH OF GAIA','OFFICIUM TRISTE',8,'2021-06-23 20:59:47','2021-06-23 20:59:47'),(12,'image-1624482549358.png','SPEED','TURBOSLASH',9,'2021-06-23 21:09:09','2021-06-23 21:09:09'),(13,'image-1624482645964.png','HERMIT AMEN','GRIM',9,'2021-06-23 21:10:45','2021-06-23 21:10:45'),(16,'image-1624483311286.png','EAGLES OF DEATH METAL','PIGEONS OF SHIT METAL',10,'2021-06-23 21:21:51','2021-06-23 21:21:51'),(17,'image-1624483362827.png','BRITNEY','BRITNEY SPEARS',10,'2021-06-23 21:22:42','2021-06-23 21:22:42'),(18,'image-1624483593498.png','NUDE','DEAD OR ALIVE',11,'2021-06-23 21:26:33','2021-06-23 21:26:33');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `users` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +102,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Martin Lopez','martinlopez@gmail.com','3901',NULL,NULL),(2,'Pedro Leon','pedroleon@gmail.com','bocapasion12',NULL,NULL),(3,'Sofia Perez','sofiperezn@gmail.com','218907lzv',NULL,NULL),(4,'Martina Zunino','martinazunino2012@gmail.com','4690uno',NULL,NULL),(5,'Jose Maria Caceres','josecaceres@gmail.com','Codjdj890',NULL,NULL);
+INSERT INTO `users` VALUES (7,'Martin','martin1900@gmail.com','$2a$10$Hh4/RkU2aEIKPGVW/Ef9aOC19BlleSSs5DM9Qs2xGsf1uIqTpDwea','2021-06-23 20:53:49','2021-06-23 20:53:49'),(8,'Lucas','lucasperez@gmail.com','$2a$10$FIeYaNtLY7X.6ZnlAjQLbO.4TW3m8kJDSuANt59Z91aaU6h47aRTm','2021-06-23 20:58:06','2021-06-23 20:58:06'),(9,'Mica','micamartinez@gmail.com','$2a$10$RHVbdJ7LzjKMChknaQkcLe9/D3gdgIMo2MPuMA4GspgN7.cVqmgg2','2021-06-23 21:07:55','2021-06-23 21:07:55'),(10,'Sofia','sofiwas@gmail.com','$2a$10$dhXvPOJZ36tvH5U7SWYp3.XCJM3QhAvF2FJJD/yg0438NZApWi1.m','2021-06-23 21:16:42','2021-06-23 21:16:42'),(11,'Tomas','tomas9@gmail.con','$2a$10$Pb816wx5fftziBWQ6Ohuq.90rOLPc5/./cgDQOsAEibpHwZWSfNGK','2021-06-23 21:25:27','2021-06-23 21:25:27');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -115,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-14 12:01:51
+-- Dump completed on 2021-06-23 18:33:44
