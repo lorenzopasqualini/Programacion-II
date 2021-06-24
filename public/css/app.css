@@ -163,13 +163,13 @@ hr {
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
-  
 }
 
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
   color: white;
+  text-align: center;
 }
 
 .product-box {
@@ -355,6 +355,7 @@ background-color: #1e2833;
   border-radius: 8px;
   overflow: hidden;
   color: white;
+  text-align: center;
 }
 
 .product-detail-img {
@@ -379,6 +380,8 @@ background-color: #1e2833;
   line-height: 1.5;
   color: white;
   margin-bottom: 0;
+  text-align: center;
+  padding: 20px;
 }
 
 .product-detail-price {

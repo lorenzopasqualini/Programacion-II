@@ -31,8 +31,11 @@
 				<!-- Detail -->
 				<article class="col-12 col-lg-8 product-detail-info">
 					<h2 class="products-title"> <%= product.title %> </h2>
+					<h3 class="product-detail-description"> <%= product.artistName %> </h3>
 					<img src="/images/products/<%= product.image %>" alt="image" class="product-detail-img">
-					<p class="product-detail-description"> <%= product.artistName %> </p>
+					<a href="/profile/<%= product.user.id %>">
+						<p class="product-detail-description"> Uploaded by <%= product.user.userName %> </p>
+					</a>
 				</article>
 				<!-- /Detail -->
 
