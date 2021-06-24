@@ -191,11 +191,10 @@ hr {
   
 }
 .out{
-background-color:  #1e2833;
-border: none;
-border-radius: 5px;
-padding: 5px;
 color: white;
+background-color: transparent;
+border: none;
+font-size: 18px;
 }
 .upgrade{
   font-size: large;
