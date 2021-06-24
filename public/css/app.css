@@ -163,6 +163,7 @@ hr {
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
+  
 }
 
 .products-title {
@@ -189,7 +190,74 @@ hr {
   margin-right: auto;
   
 }
+.out{
+background-color:  #1e2833;
+border: none;
+border-radius: 5px;
+padding: 5px;
+color: white;
+}
+.upgrade{
+  font-size: large;
+}
+.guardar{
+  background-color:  #1e2833;
+  font-size: 13px;
+}
+.hey{
+  font-size: medium;
+}
+.op{
+  font-size: small;
+  color: black;
+}
+.sw{
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.mw{
+  margin-left: 18px;
+}
+.upload{
+  font-size: small;
+}
+.we{
+  font-size: small;
+  color: black;
+}
+.ww{
+  font-size: small;
+  color: white;
+}
+.c1{
+ display: flex;
+ justify-content: center;
+ margin-top: 30px;
+}
+.flex1{
+display: flex;
+flex-direction: column;
+}
+.box1{
+  background-color: #1e2833;
+ padding: 125px 50px 125px 50px;
+ color: white;
+ border-radius: 30px;
+}
+.box2{
+background-color: #1e2833;
+ padding: 60px;
+ color: white;
+ border-radius: 30px;
+}
 
+
+.user{
+  font-size: large;
+}
+.up{
+  font-size: large;
+}
 .product-box_data {
   padding: 15px;
   position: relative;

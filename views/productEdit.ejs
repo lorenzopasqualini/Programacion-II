@@ -2,12 +2,12 @@
 <body>
 	<%- include('./partials/headerLogueado') %>
 
-    <div>
-        <form action="/product/<%= product.id %>/update" method="POST">
-            <input type="file" name="image" value="<%= product.image %>">
-            <input type="text" name="title" placeholder="Title" value="<%= product.title %>">
-            <input type="text" name="artistName" placeholder="Artist Name" value="<%= product.artistName %>">
-            <button type="submit">Guardar</button>
+    <div class="c1">
+        <form class="box1" action="/product/<%= product.id %>/update" method="POST">
+            <input class="ww"  type="file" name="image" value="<%= product.image %>">
+            <input class="we" type="text" name="title" placeholder="Title" value="<%= product.title %>">
+            <input class="we" type="text" name="artistName" placeholder="Artist Name" value="<%= product.artistName %>">
+            <button class="op" type="submit">Guardar</button>
         </form>
     </div>
 

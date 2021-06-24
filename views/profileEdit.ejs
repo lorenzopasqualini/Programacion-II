@@ -2,12 +2,12 @@
 <body>
 	<%- include('./partials/headerLogueado') %>
 
-    <div>
-        <form action="/profile/<%= user.id %>/update" method="POST">
-            <input type="email" name="email" placeholder="E-Mail" value="<%= user.email %>">
-            <input type="text" name="userName" placeholder="Username" value="<%= user.userName %>">
-            <input type="text" name="password" placeholder="Contrseña">
-            <button type="submit">Guardar</button>
+    <div class="c1">
+        <form class="box2" action="/profile/<%= user.id %>/update" method="POST">
+            <input class="we" type="email" name="email" placeholder="E-Mail" value="<%= user.email %>">
+            <input class="we" type="text" name="userName" placeholder="Username" value="<%= user.userName %>">
+            <input class="we" type="text" name="password" placeholder="Contrseña">
+            <button class="op" type="submit">Guardar</button>
         </form>
     </div>
 

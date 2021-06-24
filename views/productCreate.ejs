@@ -1,18 +1,19 @@
 	<%- include('./partials/head') %>
 <body>
 	<%- include('./partials/headerLogueado') %>
-
-	<form action="/product/store" method="POST" enctype="multipart/form-data">
-		<input type="file" name="image">
-		<input type="text" name="title" placeholder="Title">
-		<input type="text" name="artistName" placeholder="Artist Name">
-		<button type="submit">Guardar</button>
+	<div class="c1">
+	<form class="box1" action="/product/store" method="POST" enctype="multipart/form-data">
+		<input class="upload" type="file" name="image">
+		<input class="upload" type="text" name="title" placeholder="Title">
+		<input class="upload" type="text" name="artistName" placeholder="Artist Name">
+		<button class="op" type="submit">Guardar</button>
 		<% if(locals.error){ %>
 			<div class="alert alert-danger">
 				<%= error.message %>
 			</div>
 		<% } %>
 	</form>
+</div>
 
 	<%- include('./partials/footer') %>
 </body>

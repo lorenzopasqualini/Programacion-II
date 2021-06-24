@@ -15,10 +15,10 @@
 					<% if(locals.user != undefined){ %> 
 					<p class="product-detail-description">
 						<form action="/product/<%= product.id %>/edit" method="GET">
-							<button type="submit">Editar</button>
+							<button class="sw" type="submit">Editar</button>
 						</form>
-						<form action="/product/destroy/<%= product.id %>" method="POST">
-							<button type="submit">Borrar</button>
+						<form class="mw" action="/product/destroy/<%= product.id %>" method="POST">
+							<button class="sw" type="submit">Borrar</button>
 						</form>
 					</p>
 					<% } %>
@@ -42,11 +42,11 @@
 						<div class="comments">
 							<div class="text">
 								<a href="/profile/<%= product.comentario[i].user.id %>">
-									<strong><%= product.comentario[i].user.userName %></strong>
+									<strong class="hey"><%= product.comentario[i].user.userName %></strong>
 								</a>
 							</div>
-							<div class="text">
-								<p><%= product.comentario[i].texto %></p>
+							<div class="texto">
+								<p class="hey"><%= product.comentario[i].texto %></p>
 							</div>
 						</div>
 					<% } %>
@@ -55,7 +55,7 @@
 						<div class="text">
 							<form action="/product/<%= product.id %>/comment" method="POST" class="form">
 								<input type="text" name="texto" style="color: black; width: 500px;">
-								<button type="submit">Guardar</button>
+								<button type="submit" class="guardar">Guardar</button>
 							</form>
 						</div>
 					<% } %>

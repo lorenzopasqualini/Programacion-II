@@ -22,14 +22,14 @@
 
 		<nav class="main-navbar">
 			<ul class="left-navbar">
-				<li><a href="/product/create">Cargar vinilo</a></li>
+				<li><a href="/product/create" class="upgrade">Cargar vinilo</a></li>
 			</ul>
 			<ul class="right-navbar">
-				<li><a href="/profile/<%= locals.user.id %>"> <%= locals.user.userName %> <i class="fas fa-user"></i></a>
+				<li><a class="upgrade" href="/profile/<%= locals.user.id %>"> <%= locals.user.userName %> <i class="fas fa-user"></i></a>
 				</li>
 				<li>
 					<form action="/login/logout" method="post">
-						<button type="submit">Logout</button>
+						<button type="submit" class="out">Logout</button>
 					</form>
 				</li>
 			</ul>
