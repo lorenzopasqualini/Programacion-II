@@ -91,7 +91,7 @@ const productController={
         }
 
         db.Product.update(product, {
-            where:{id: req.session.id}
+            where:{id: req.params.id}
         })
             .then(id=>{
                 product.id= req.session.id;
